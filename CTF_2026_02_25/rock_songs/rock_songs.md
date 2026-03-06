@@ -17,7 +17,7 @@ unar zipped.rar
 However, we the RAR file is password protected.
 
 
-![locked](unar.png)
+![locked](./images/unar.png)
 
 Since the password is required to extract the files, our goal becomes to crack the archive password.
 
@@ -40,7 +40,7 @@ rar2john zipped.rar > rock.hash
 
 This command reads the encrypted metadata inside the archive and writes the corresponding hash to ```rock.hash```.
 
-![rar2john](rar2john.png)
+![rar2john](./images/rar2john.png)
 
 Next, we run John the Ripper to crack the extracted hash. Since John typically performs dictionary attacks, we need to provide it with a wordlist containing possible passwords to test agains the hash. The title of the challenge is "Rock songs" so that is a hint that suggests we should use the rockyou wordlist.
 
@@ -54,11 +54,11 @@ John will then attempt each password from the wordlist until it finds one that m
 
 Normally, John will display the password automatically once it is cracked. However, since the hash is already cracked in my pc, I need to run ```john --show rock.hash``` as well.
 
-![cracked](cracked.png)
+![cracked](./images/cracked.png)
 
 Now that we know the cracked password is ```dragon```, we can successfully extract the archive. After extraction, we find a file named ```flag.txt``` which contains the flag for the challenge.
 
 
-![flag](flag.png)
+![flag](./images/flag.png)
 
 ## Flag: CTFkom{z11111111111111111111111p}
